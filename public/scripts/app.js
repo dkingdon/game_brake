@@ -12,11 +12,11 @@ angular
         controllerAs: 'gameIndexCtrl',
         controller: 'GameIndexController'
       })
-      // .when('/books/:id', {
-      //   templateUrl: '/templates/book-show.html',
-      //   controllerAs: 'bookShowCtrl',
-      //   controller: 'BookShowController'
-      // })
+      .when('/ttt', {
+        templateUrl: '/views/templates/ticTacToe.html',
+        controllerAs: 'tttCtrl',
+        controller: 'ticTacToeController'
+      })
       // .when('/pokemon', {
       //   templateUrl: '/templates/pokemonIndex.html',
       //   controllerAs: 'pokemonIndexCtrl',

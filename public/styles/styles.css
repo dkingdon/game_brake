@@ -25,6 +25,28 @@ html body {
 
 }
 
+  /* - - - Tic-Tac-Toe styles - - - */
+#board {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.box {
+  border: 1px solid black;
+  height: 150px;
+}
+
+.ttt-btn {
+  position: fixed;
+  right: 52%;
+  left: 48%;
+  margin-top: 20px;
+}
+  /* - - - END Tic-Tac-Toe - - - */
+
+
 .footer {
   background-color: #333333;
   color: white;
