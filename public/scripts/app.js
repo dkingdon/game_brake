@@ -8,7 +8,7 @@ angular
   function config ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '/templates/gamesIndex.html',
+        templateUrl: '/views/templates/gamesIndex.html',
         controllerAs: 'gameIndexCtrl',
         controller: 'GameIndexController'
       })
