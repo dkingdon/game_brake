@@ -17,11 +17,11 @@ angular
         controllerAs: 'tttCtrl',
         controller: 'ticTacToeController'
       })
-      // .when('/pokemon', {
-      //   templateUrl: '/templates/pokemonIndex.html',
-      //   controllerAs: 'pokemonIndexCtrl',
-      //   controller: 'PokemonIndexController'
-      // })
+      .when('/hangman', {
+        templateUrl: '/views/templates/hangman.html',
+        controllerAs: 'hangmanCtrl',
+        controller: 'hangmanController'
+      })
 
     $locationProvider.html5Mode({
       enabled: true,
