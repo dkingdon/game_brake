@@ -1,3 +1,34 @@
-h1 {
-  color: blue;
+html body {
+  background-color: #cccccc;
+}
+
+.jumbotron {
+  background-image: url(/images/dark-pattern.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #EEE;
+}
+.jumbotron .container {
+  height: 100px;
+}
+
+.inline-header {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 12px;
+}
+
+.col-md-10 {
+  border: 2px solid white;
+  height: 65vh;
+  text-align: center;
+
+}
+
+.footer {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  height: 60px;
 }
