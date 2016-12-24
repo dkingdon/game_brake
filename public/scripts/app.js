@@ -22,6 +22,11 @@ angular
         controllerAs: 'hangmanCtrl',
         controller: 'hangmanController'
       })
+      .when('/memory', {
+        templateUrl: '/views/templates/memory.html',
+        controllerAs: 'memoryCtrl',
+        controller: 'memoryController'
+      })
 
     $locationProvider.html5Mode({
       enabled: true,

@@ -7,7 +7,6 @@ angular
   ticTacToeController.$inject = ['$http'];
   function ticTacToeController ($http) {
     var vm = this;
-    vm.newBook = {};
 
   } //END OF CONTROLLER
 
