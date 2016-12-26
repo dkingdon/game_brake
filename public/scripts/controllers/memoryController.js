@@ -8,46 +8,58 @@ angular
   function memoryController ($http) {
     var vm = this;
 
-    var cards = ["queen", "queen", "king", "king","jack", "jack", "ace", "ace", "king", "king","jack", "jack", "ace", "ace"];
-//
-// maybe have a function for each line of four. pulling from
+    var cards = ["sun", "sun", "earth", "earth", "mars", "mars", "jupiter", "jupiter", "saturn", "saturn", "neptune", "neptune"];
 
     var cardsInPlay = [];
 
-    var createCards = function() {
-    	var gameBoard = $('#game-board');
-      // console.log(gameBoard);
-
-    	for (var i = 0; i < cards.length; i++) {
-        // console.log(i);
-        if (i % 4 === 0) {
-          $('#game-board').append('<br>')
-          console.log("break")
-        }
-    		var newDiv = document.createElement('div');
-    		newDiv.className = "col-md-3 card ";
-
-    		newDiv.setAttribute('data-card', cards[i]);
-        console.log(newDiv);
-    		newDiv.addEventListener('click', isTwoCards);
-
-    		$('#game-board').append(newDiv);
-    	}
+    /* - - Shuffles card array for random card placement - - */
+    function shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+      console.log(array);
     }
+    
+    /* - - Random card placement - - */
+    var createCards = function() {
+      cards = shuffle(cards);
+      for (i = 1; i <= cards.length; i++) {
+        $('#' + i).attr('data-card', cards[i - 1]);
+        };
+      }
 
-    var isTwoCards = function() {
+    $('.card').on('click', isTwoCards = function() {
     	cardsInPlay.push(this.getAttribute("data-card"));
-    		if (this.getAttribute("data-card") == "king") {
-    			this.innerHTML = '<img src = "images/king.png" alt = "King of Spades">';
+      console.log(cardsInPlay) //NOTE:remove before prod
+        if (this.getAttribute("data-card") == "jupiter") {
+    			this.innerHTML = '<img src = "images/jupiter.png" alt = "Jupiter">';
     		}
+        else if (this.getAttribute("data-card") == "sun") {
+          this.innerHTML = '<img src = "images/sun.jpg" alt = "Sun">';
+        }
+        else if (this.getAttribute("data-card") == "earth") {
+          this.innerHTML = '<img src = "images/earth.jpg" alt = "Earth">';
+        }
+        else if (this.getAttribute("data-card") == "mars") {
+          this.innerHTML = '<img src = "images/mars.jpg" alt = "Mars">';
+        }
+        else if (this.getAttribute("data-card") == "saturn") {
+          this.innerHTML = '<img src = "images/saturn.jpg" alt = "Saturn">';
+        }
     		else {
-    			this.innerHTML = '<img src = "images/queen.png" alt = "Queen of Clubs">';
+    			this.innerHTML = '<img src = "images/neptune.jpg" alt = "Neptune">';
     		}
     			if (cardsInPlay.length == 2) {
     				isMatch(cardsInPlay);
     				cardsInPlay = [];
     			}
-    }
+    });
 
       var isMatch = function(cards){
       	if (cards[0] == cards[1]) {
@@ -59,6 +71,6 @@ angular
       	}
       }
 
-    // createCards();
+    createCards();
 
 } //END OF CONTROLLER
