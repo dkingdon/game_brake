@@ -50,9 +50,7 @@ html body {
 }
 
 #board {
-  /*margin-top: 10px;*/
   text-align: center;
-  /*font-size: 100px;*/
   font-size: 13vmin;
   font-weight: bold;
 }
@@ -127,6 +125,10 @@ html body {
   /* - - - Hangman styles - - - */
 .small-font { font-size: 12px; }
 
+.col-sm-12 {
+  border: 1px solid black;
+}
+
 .wide {
   letter-spacing: 10px;
   font-stretch: ultra-expanded;
@@ -139,15 +141,6 @@ html body {
   /* - - - END Hangman styles - - - */
 
   /* - - - Memory styles - - - */
-/*.board {
-	height: 80%;
-	width: 100%;
-	display: inline-block;
-	float: left;
-}*/
-/*.memory-board {
-  background: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbpdbGvaZ8CQOy8yPBlysEcK5BHYO3o2oj-pMEZQqRiRnv3zy4);
-}*/
 
 .card {
 	height: 140px;
