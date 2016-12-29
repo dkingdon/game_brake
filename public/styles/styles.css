@@ -26,23 +26,101 @@ html body {
 }
 
   /* - - - Tic-Tac-Toe styles - - - */
+
+#ttt-container {
+  margin-top: -18px;
+}
+
+#scoreboard {
+  font-weight: bold;
+}
+
+#wins {
+  text-align: right;
+  font-size: 1.75vmin;
+}
+
+#losses {
+  font-size: 1.75vmin;
+}
+
+#ties {
+  text-align: left;
+  font-size: 1.75vmin;
+}
+
 #board {
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   text-align: center;
-  font-size: 100px;
+  /*font-size: 100px;*/
+  font-size: 13vmin;
   font-weight: bold;
 }
 
 .box {
-  border: 1px solid black;
-  height: 150px;
+  height: 16vh;
 }
 
-.ttt-btn {
-  position: fixed;
-  right: 52%;
-  left: 48%;
-  margin-top: 20px;
+#topLeft {
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#topMiddle {
+  border-top: 0px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#topRight {
+  border-top: 0px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 0px;
+}
+#midLeft {
+  border-top: 1px solid black;
+  border-left: 0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#midMiddle {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+#midRight {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 0px;
+}
+
+#botLeft {
+  border-top: 1px solid black;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 1px solid black;
+}
+
+#botMiddle {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 0px;
+  border-right: 1px solid black;
+}
+
+#botRight {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 0px;
+  border-right: 0px;
 }
   /* - - - END Tic-Tac-Toe - - - */
 
@@ -89,9 +167,6 @@ img {
   border-radius: 18px;
 }
 
-/*.col-md-3 {
-  border: 1px solid black;
-}*/
 
 .memory-board {
   text-align: center;

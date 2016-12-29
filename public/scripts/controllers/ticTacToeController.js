@@ -11,7 +11,10 @@ angular
    var turnSymbol = 'O';
    var tilesInPlay = [];
    var winner = false;
-   var gameBoard = ['topLeft', 'topMiddle', 'topRight', 'midMiddle', 'midLeft', 'midRight', 'botLeft','botRight', 'botMiddle' ];
+   var wins = 0;
+   var losses = 0;
+   var ties = 0
+   var gameBoard = ['topLeft', 'topMiddle', 'topRight', 'midMiddle', 'midLeft', 'midRight', 'botLeft','botRight', 'botMiddle'];
 
    function checkAvailable(id){
      for (var i = 0; i < tilesInPlay.length; i++) {
@@ -22,7 +25,7 @@ angular
      return true
    }
 
-   $('.col-md-4').click(function() {
+   $('.box').click(function() {
      var targetId = (this.id);
       if (checkAvailable(targetId)) {
          turnSymbol === 'O' ? turnSymbol = 'X' : turnSymbol = 'O';
@@ -37,44 +40,75 @@ angular
 
      function checkWinner(turnSymbol) {
        if ($('#topLeft').text() === turnSymbol & $('#topMiddle').text() === turnSymbol & $('#topRight').text() === turnSymbol) {
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else if ($('#topLeft').text() === turnSymbol & $('#midLeft').text() === turnSymbol & $('#botLeft').text()  === turnSymbol){
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else if ($('#topLeft').text() === turnSymbol & $('#midMiddle').text()  === turnSymbol & $('#botRight').text()  === turnSymbol){
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else if ($('#topMiddle').text() === turnSymbol & $('#midMiddle').text() === turnSymbol & $('#botMiddle').text() === turnSymbol){
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else if ($('#topRight').text() === turnSymbol & $('#midMiddle').text() === turnSymbol & $('#botLeft').text() === turnSymbol){
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else if ($('#topRight').text() === turnSymbol & $('#midRight').text()  === turnSymbol & $('#botRight').text()  === turnSymbol){
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else if ($('#midLeft').text() === turnSymbol & $('#midMiddle').text() === turnSymbol & $('#midRight').text()  === turnSymbol){
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else if ($('#botLeft').text() === turnSymbol & $('#botMiddle').text() === turnSymbol & $('#botRight').text() === turnSymbol){
-         alert(turnSymbol + ' is the winner');
-         winner = true;
+         declareWinner()
        }
        else {
          if (tilesInPlay.length === 9) {
            winner = true;
-           alert('The game is a tie');
+           ties += 1;
+           $('#ttt-head').text('The game is a tie');
+           $('#ties').text('Ties: ' + ties);
+           $('.ttt-btn').text('Play Again?');
          }
        }
      } // End of winner
+
+     function declareWinner() {
+       winner = true;
+       $('#ttt-head').text(turnSymbol + '  - is the winner');
+       $('.ttt-btn').text('Play Again?');
+      if (turnSymbol === 'X') {
+        wins += 1;
+        $('#wins').text('Wins: ' + wins);
+      }
+      else {
+        losses += 1;
+        $('#losses').text('Losses: ' + losses);
+      }
+    };
+
+    $('.ttt-btn').on('click', function(){
+      playAgain();
+    });
+
+    function playAgain(){
+      turnSymbol = 'O';
+      tilesInPlay = [];
+      winner = false;
+      gameBoard = ['topLeft', 'topMiddle', 'topRight', 'midMiddle', 'midLeft', 'midRight', 'botLeft','botRight', 'botMiddle'];
+      $('.ttt-btn').text('Reset');
+      $('#ttt-head').text('Tic Tac Toe');
+      $('#botRight').text('');
+      $('#botLeft').text('');
+      $('#botMiddle').text('');
+      $('#midRight').text('');
+      $('#midLeft').text('');
+      $('#midMiddle').text('');
+      $('#topRight').text('');
+      $('#topMiddle').text('');
+      $('#topLeft').text('');
+    }
 
 
      function ohBot() { // Computer player
@@ -168,6 +202,10 @@ angular
            $('#midMiddle').trigger('click');
            gameBoard.splice((gameBoard.indexOf()), 1);
          }
+         else if ($('#botMiddle').text() === 'O' & $('#botRight').text() === 'O' & $('#botLeft').text() === '') {
+           $('#botLeft').trigger('click');
+           gameBoard.splice((gameBoard.indexOf()), 1);
+         }
          else if ($('#midMiddle').text() === 'X' & $('#topLeft').text() === 'X' & $('#botRight').text() === '') {
            $('#botRight').trigger('click');
            gameBoard.splice((gameBoard.indexOf()), 1);
@@ -256,6 +294,10 @@ angular
            $('#midMiddle').trigger('click');
            gameBoard.splice((gameBoard.indexOf()), 1);
          }
+         else if ($('#botMiddle').text() === 'O' & $('#botRight').text() === 'O' & $('#botLeft').text() === '') {
+           $('#botLeft').trigger('click');
+           gameBoard.splice((gameBoard.indexOf()), 1);
+         }
          else {
            if (gameBoard.length <= 2) {
              $('#' + gameBoard[0]).trigger('click')
@@ -264,7 +306,7 @@ angular
              var random = gameBoard[Math.floor(Math.random() * gameBoard.length)];
                if ($('#' + random).text() !== '' ) {
                 console.log('second random hit is ' + random);
-                 gameBoard.splice((gameBoard.indexOf()), 1);
+                gameBoard.splice((gameBoard.indexOf(random)), 1);
                  ohBot();
                }
                else {
