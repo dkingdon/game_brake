@@ -1,4 +1,3 @@
-console.log('GamesIndex.js is connected');
 
 angular
   .module('games')

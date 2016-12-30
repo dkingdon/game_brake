@@ -1,4 +1,3 @@
-console.log('app.js is connected')
 
 angular
   .module('games', ['ngRoute'])
@@ -12,16 +11,21 @@ angular
         controllerAs: 'gameIndexCtrl',
         controller: 'GameIndexController'
       })
-      // .when('/books/:id', {
-      //   templateUrl: '/templates/book-show.html',
-      //   controllerAs: 'bookShowCtrl',
-      //   controller: 'BookShowController'
-      // })
-      // .when('/pokemon', {
-      //   templateUrl: '/templates/pokemonIndex.html',
-      //   controllerAs: 'pokemonIndexCtrl',
-      //   controller: 'PokemonIndexController'
-      // })
+      .when('/ttt', {
+        templateUrl: '/views/templates/ticTacToe.html',
+        controllerAs: 'tttCtrl',
+        controller: 'ticTacToeController'
+      })
+      .when('/hangman', {
+        templateUrl: '/views/templates/hangman.html',
+        controllerAs: 'hangmanCtrl',
+        controller: 'hangmanController'
+      })
+      .when('/memory', {
+        templateUrl: '/views/templates/memory.html',
+        controllerAs: 'memoryCtrl',
+        controller: 'memoryController'
+      })
 
     $locationProvider.html5Mode({
       enabled: true,

@@ -1,9 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-// commenting out until needed
-// var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/todo-app-demo')
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 

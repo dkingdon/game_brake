@@ -1,0 +1,38 @@
+<br />
+
+<div class='container' id="container">
+  <div id='poor-soul' class='row'>
+      <div class="image"></div>
+  </div>
+  <div class='row'>
+    <div class='col-sm-12 text-center'>
+    </div>
+    <div class='col-sm-12 text-center'>
+      <span class='wide'>{{ hangmanCtrl.hangman.displayWord }}</span>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-sm-12 text-center'>
+      <span class="label label-default">GUESSES: </span>
+    </div>
+    <div class='col-sm-12 text-center' id='guesses'>
+      <span ng-repeat="prevGuess in hangmanCtrl.hangman.guesses"> {{ prevGuess }} |</span>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-sm-12 text-center'>
+      <span class="label label-default">INPUT:</span>
+    </div>
+    <div class="col-sm-12 text-center">
+      <input ng-model="hangmanCtrl.hangman.input" ng-change="hangmanCtrl.guessLetter(hangmanCtrl.hangman.input)" type='text' size='1' id='guess' autofocus>
+    </div>
+  </div>
+  <br />
+  <div class='row' id='statuses'>
+    <div class='col-sm-1 table small-font'>
+      <a href="/" class="btn btn-primary active" role="button">Home</a>
+    </div>
+  </div>
+</div>

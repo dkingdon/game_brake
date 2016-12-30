@@ -12,23 +12,223 @@ html body {
   height: 100px;
 }
 
+.jumbotron h1 {
+  font-size: 8vmin;
+  margin-bottom: 0;
+}
+
 .inline-header {
   display: inline-block;
   vertical-align: baseline;
   margin-right: 12px;
 }
 
+
 .col-md-10 {
   border: 2px solid white;
   height: 65vh;
   text-align: center;
-
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+  /* - - - Games Index styles - - - */
+#ttt-index {
+  border: 1px solid white;
+  background: url('/images/ttt-background.jpg') no-repeat center center;
+  background-size: cover;
 }
 
+#hangman-index {
+  border: 1px solid white;
+  background: url('/images/hangman-background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#memory-index {
+  border: 1px solid white;
+  background: url('/images/memory-background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.index-nav {
+    height: 19vh;
+}
+
+h2 {
+  color: white;
+  font-size: 9vmin;
+  font-stretch: ultra-expanded;
+  text-shadow: 1px 2px black;
+}
+
+ /* - - - End Games Index styles - - - */
+  /* - - - Tic-Tac-Toe styles - - - */
+
+#ttt-container {
+  margin-top: -18px;
+}
+
+#scoreboard {
+  font-weight: bold;
+}
+
+#wins {
+  text-align: right;
+  font-size: 1.75vmin;
+}
+
+#losses {
+  font-size: 1.75vmin;
+}
+
+#ties {
+  text-align: left;
+  font-size: 1.75vmin;
+}
+
+#board {
+  text-align: center;
+  font-size: 13vmin;
+  font-weight: bold;
+}
+
+.box {
+  height: 16vh;
+}
+
+#topLeft {
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 1.5px solid black;
+  border-right: 1.5px solid black;
+}
+
+#topMiddle {
+  border-top: 0px;
+  border-left: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  border-right: 1.5px solid black;
+}
+
+#topRight {
+  border-top: 0px;
+  border-left: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  border-right: 0px;
+}
+#midLeft {
+  border-top: 1.5px solid black;
+  border-left: 0px;
+  border-bottom: 1.5px solid black;
+  border-right: 1.5px solid black;
+}
+
+#midMiddle {
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  border-right: 1.5px solid black;
+}
+
+#midRight {
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
+  border-bottom: 1.5px solid black;
+  border-right: 0px;
+}
+
+#botLeft {
+  border-top: 1.5px solid black;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 1.5px solid black;
+}
+
+#botMiddle {
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
+  border-bottom: 0px;
+  border-right: 1.5px solid black;
+}
+
+#botRight {
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+  /* - - - END Tic-Tac-Toe - - - */
+
+  /* - - - Hangman styles - - - */
+.small-font { font-size: 12px; }
+
+.col-sm-12 {
+  font-size: 3vmin;
+}
+
+div.image {
+  content: url(../images/stickmen/STICKMAN-4.png);
+  display: block;
+  margin: auto;
+  height: 30vh;
+}
+
+.wide {
+  letter-spacing: 10px;
+  font-stretch: ultra-expanded;
+}
+.label-default {
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+  /* - - - END Hangman styles - - - */
+
+  /* - - - Memory styles - - - */
+
+.card {
+	height: 15vmin;
+	width: 12vmin;
+	border: black 1px solid;
+	background:  url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSbpdbGvaZ8CQOy8yPBlysEcK5BHYO3o2oj-pMEZQqRiRnv3zy4) center;
+	border-radius: 18px;
+	margin: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.memory-board img {
+  height: 15vmin;
+	width: 12vmin;
+  border-radius: 18px;
+}
+
+.memory-board {
+  text-align: center;
+}
+
+  /* - - - END Memory styles - - - */
+
 .footer {
+  position: absolute;
   background-color: #333333;
   color: white;
   text-align: center;
-  margin-top: 20px;
-  height: 60px;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+}
+
+.linkedin {
+  margin-top: -5px;
+}
+
+.github {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+.email {
+  margin-top: 18px;
+  margin-bottom: 0px;
 }
