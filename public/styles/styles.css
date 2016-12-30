@@ -23,32 +23,42 @@ html body {
   margin-right: 12px;
 }
 
+
 .col-md-10 {
   border: 2px solid white;
   height: 65vh;
   text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
   /* - - - Games Index styles - - - */
 #ttt-index {
-  border: 1px solid black;
+  border: 1px solid white;
   background: url('/images/ttt-background.jpg') no-repeat center center;
   background-size: cover;
 }
 
 #hangman-index {
-  border: 1px solid black;
-  background: url('/images/ttt-background.jpg') no-repeat center center;
+  border: 1px solid white;
+  background: url('/images/hangman-background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+#memory-index {
+  border: 1px solid white;
+  background: url('/images/memory-background.jpg') no-repeat center center;
   background-size: cover;
 }
 
 .index-nav {
-    height: 20vh;
+    height: 19vh;
 }
 
 h2 {
   color: white;
   font-size: 9vmin;
   font-stretch: ultra-expanded;
+  text-shadow: 1px 2px black;
 }
 
  /* - - - End Games Index styles - - - */
@@ -187,11 +197,11 @@ div.image {
   margin-right: auto;
 }
 
-img {
+.memory-board img {
   height: 140px;
   width: 110px;
   border-radius: 18px;
-}
+}*/
 
 .memory-board {
   text-align: center;
@@ -200,9 +210,25 @@ img {
   /* - - - END Memory styles - - - */
 
 .footer {
+  position: absolute;
   background-color: #333333;
   color: white;
   text-align: center;
-  margin-top: 20px;
-  height: 60px;
+  width: 100%;
+  bottom: 0;
+  height: 80px;
+}
+
+.linkedin {
+  margin-top: -5px;
+}
+
+.github {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+.email {
+  margin-top: 18px;
+  margin-bottom: 0px;
 }
