@@ -1,4 +1,3 @@
-console.log('app.js is connected')
 
 angular
   .module('games', ['ngRoute'])

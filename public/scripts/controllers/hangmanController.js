@@ -1,4 +1,3 @@
-console.log("hangman.js connected")
 
 angular
   .module('games')

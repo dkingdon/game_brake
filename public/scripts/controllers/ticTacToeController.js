@@ -1,4 +1,3 @@
-console.log("ttt.js connected")
 
 angular
   .module('games')
