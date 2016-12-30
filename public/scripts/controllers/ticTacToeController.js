@@ -122,6 +122,10 @@ angular
            $('#botMiddle').trigger('click');
            gameBoard.splice((gameBoard.indexOf()), 1);
          }
+         else if ($('#botMiddle').text() === 'O' & $('#botLeft').text() === 'O' & $('#botRight').text() === '') {
+           $('#botRight').trigger('click');
+           gameBoard.splice((gameBoard.indexOf()), 1);
+         }
          else if ($('#midMiddle').text() === 'O' & $('#topRight').text() === 'O' & $('#botLeft').text() === '') {
            $('#botLeft').trigger('click');
            gameBoard.splice((gameBoard.indexOf()), 1);
@@ -244,6 +248,10 @@ angular
          }
          else if ($('#topLeft').text() === 'X' & $('#topRight').text() === 'X' & $('#topMiddle').text() === '') {
            $('#topMiddle').trigger('click');
+           gameBoard.splice((gameBoard.indexOf()), 1);
+         }
+         else if ($('#botLeft').text() === 'X' & $('#botMiddle').text() === 'X' & $('#botRight').text() === '') {
+           $('#botRight').trigger('click');
            gameBoard.splice((gameBoard.indexOf()), 1);
          }
          else if ($('#topLeft').text() === 'X' & $('#midLeft').text() === 'X' & $('#botLeft').text() === '') {

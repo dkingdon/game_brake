@@ -1,13 +1,11 @@
+<br />
+
 <div class='container' id="container">
   <div id='poor-soul' class='row'>
-      <p>This is where the image will be</p>
-    <div class='col-sm-12 col-md-6 col-md-offset-3 text-center'>
-      {{ hangmanCtrl.hangman.triesRemaining }} tries remaining
-    </div>
+      <div class="image"></div>
   </div>
   <div class='row'>
     <div class='col-sm-12 text-center'>
-      <span class="label label-default">SOLVING:</span>
     </div>
     <div class='col-sm-12 text-center'>
       <span class='wide'>{{ hangmanCtrl.hangman.displayWord }}</span>
@@ -31,9 +29,9 @@
       <input ng-model="hangmanCtrl.hangman.input" ng-change="hangmanCtrl.guessLetter(hangmanCtrl.hangman.input)" type='text' size='1' id='guess' autofocus>
     </div>
   </div>
+  <br />
   <div class='row' id='statuses'>
-    <div class='col-sm-1 table small-font'>Win status:
-      <span class='glyphicon' ng-class="hangmanCtrl.hangman.gameWon ? 'glyphicon-ok' : 'glyphicon-remove'"></span>
+    <div class='col-sm-1 table small-font'>
       <a href="/" class="btn btn-primary active" role="button">Home</a>
     </div>
   </div>
